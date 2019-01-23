@@ -1,0 +1,18 @@
+{
+  "name": "cordova-plugin-client-certificate",
+  "version": "0.0.4-dev",
+  "description": "This plugin uses iOS implementation and API from mwaylabs/cordova-plugin-client-certificate",
+  "scripts": {
+    "test": "echo 'no test command' && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brodybits/cordova-plugin-client-certificate.git"
+  },
+  "author": "Various",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/brodybits/cordova-plugin-client-certificate/issues"
+  },
+  "homepage": "https://github.com/brodybits/cordova-plugin-client-certificate#readme"
+}
