@@ -24,7 +24,7 @@ Add to config.xml the following
 #Use Steps
 Clone the plugin
 
-    $ git clone https://github.com/agenceaddictic/cordova-plugin-client-certificate-addictic.git
+    $ git clone https://github.com/brodybits/cordova-plugin-client-certificate.git
 
 Create a new Cordova Project
 
@@ -33,7 +33,7 @@ Create a new Cordova Project
 Install the plugin
 
     $ cd hello
-    $ cordova plugin add ../cordova-plugin-client-certificate-addictic
+    $ cordova plugin add https://github.com/brodybits/cordova-plugin-client-certificate#branch-name
     
 Install plugin File
 
