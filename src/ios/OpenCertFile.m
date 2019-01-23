@@ -5,6 +5,7 @@
 - (void)selectCert:(CDVInvokedUrlCommand *)invokedCommand
 {
      printf("HERE selectCert: %s", [[invokedCommand description] UTF8String]);
+     NSLog(@"HERE selectCert: %@", [invokedCommand description]);
 }
 
 - (void)handleOpenURL:(NSNotification*)notification
@@ -15,6 +16,7 @@
     NSURL* url = [notification object];
 
     printf("HERE Notification: %s", [[notification description] UTF8String]);
+    NSLog(@"HERE Notification: %@", [notification description]);
     [self readDirectoryContent: @"/"];
 
     if ([url isKindOfClass:[NSURL class]]) {
