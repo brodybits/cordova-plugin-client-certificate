@@ -37,8 +37,13 @@
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
+		<!--
             <feature name="ClientCertificate">
                 <param name="ios-package" value="ClientCertificate"/>
+                <param name="ios-package" value="OpenCertFile"/>
+            </feature>
+	    - -->
+            <feature name="OpenCertFile">
                 <param name="ios-package" value="OpenCertFile"/>
             </feature>
         </config-file>
