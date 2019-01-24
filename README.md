@@ -24,15 +24,15 @@ Copy a client certificate into the `www` folder.
 Edit `www/js/index.js` and add the following code inside `onDeviceReady`:
 
 ```js
-    var success = function(message) {
+    var onSuccess = function(message) {
         alert(message);
     }
 
-    var failure = function(error) {
+    var onFailure = function(error) {
         alert("Error:" + error);
     }
 
-    clientCertificate.registerAuthenticationCertificate("certfilePath/cert.p12", "s3cr37", success, failure);
+    clientCertificate.registerAuthenticationCertificate("certfilePath/cert.p12", "s3cr37", onSuccess, onFailure);
 ```
 
 ### Build and run
