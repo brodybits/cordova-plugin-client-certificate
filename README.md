@@ -1,5 +1,7 @@
 # Cordova Client Certificate Plugin
 
+Plugin that uses a client certificate for authentication.
+
 This plugin uses iOS implementation and API from mwaylabs/cordova-plugin-client-certificate
 
 This plugin is forked from zxyang/cordova-plugin-clientcertificate / addictic/cordova-plugin-client-certificate-addictic
@@ -25,30 +27,33 @@ Add the following to `config.xml`:
 </platform>
 ```
 
-#Use Steps
-Clone the plugin
+## Usage
 
-    $ git clone https://github.com/agenceaddictic/cordova-plugin-client-certificate-addictic.git
+### Installing the plugin
 
 Create a new Cordova Project
 
     $ cordova create hello com.example.helloapp Hello
 
-Install the plugin
+Install the plugin, for example:
 
     $ cd hello
-    $ cordova plugin add ../cordova-plugin-client-certificate-addictic
+    $ cordova plugin add https://github.com/mwaylabs/cordova-plugin-client-certificate
 
 Install plugin File
 
     $ cordova plugin add cordova-plugin-file
 
-Sample demo:
+### Sample program
+
+**WARNING:** Client certificate should NEVER be included in the `www` folder or any other part of a published app.
+
+Copy a client certificate into the `www` folder.
 
 Copy of an embedded certificate in /www (read only) to a directory accessible in read/write
 Retrieve the final path and execute the handshake SSL
 
-Add the following code inside `onDeviceReady`
+Edit `www/js/index.js` and add the following code inside `onDeviceReady`:
 
 ```js
 var certAutomate = 'mycert.p12';
@@ -74,7 +79,8 @@ var certAuthenticate = function() {
 	// Full path to the cert
 	var p12path = datDir.substring(7) + certFolder + certAutomate;
 	var p12pass = 'myPassword';
-	clientCertificate.register(p12path, p12pass, certificateRegistred, onFailure);
+
+    clientCertificate.registerAuthenticationCertificate("certfilePath/cert.p12", "s3cr37", onSuccess, onFailure);
 };
 
 var certificateRegistred = function(message) {
@@ -92,6 +98,8 @@ var onFailure = function(message){
 	
 ```
 
+### Build and run
+
 Install iOS and Android platform
 
     cordova platform add ios
@@ -102,3 +110,8 @@ Run the code
     cordova run android
     cordova run ios
 
+## More Info
+
+For more information on setting up Cordova see [the Cordova CLI documentation](https://cordova.apache.org/docs/en/latest/guide/cli/index.html#installing-the-cordova-cli)
+
+For more info on plugins see the [Cordova Plugin Development Guide](https://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/index.html)
