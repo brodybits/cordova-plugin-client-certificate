@@ -2,13 +2,27 @@
 
 @implementation OpenCertFile : CDVPlugin
 
+- (void)pluginInitialize
+{
+    NSLog(@"*****************************************************");
+    NSLog(@"*****************************************************");
+    NSLog(@"*****************************************************");
+    NSLog(@"*****************************************************");
+    NSLog(@"*****************************************************");
+    NSLog(@"*****************************************************");
+    NSLog(@"******************   OpenCertFile pluginInitialize");
+    NSLog(@"OpenCertFile pluginInitialize");
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleOpenURL1:) name:CDVPluginHandleOpenURLNotification object:nil];
+}
+
 - (void)selectCert:(CDVInvokedUrlCommand *)invokedCommand
 {
      printf("HERE selectCert: %s", [[invokedCommand description] UTF8String]);
      NSLog(@"HERE selectCert: %@", [invokedCommand description]);
 }
 
-- (void)handleOpenURL:(NSNotification*)notification
+- (void)handleOpenURL1:(NSNotification*)notification
 {
     // override to handle urls sent to your app
     // register your url schemes in your App-Info.plist
